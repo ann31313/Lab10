@@ -14,32 +14,24 @@ public class testSelectionSort {
     }
 
     public testSelectionSort() {
+    	
     }
-
+    
     public void testPositive() {
-        int[] arr = new int[5];
-        arr[0] = 8;
-        arr[1] = 9;
-        arr[2] = 7;
-        arr[3] = 10;
-        arr[4] = 2;
         SelectionSort selectionSort = new SelectionSort();
-        arr = selectionSort.basicSelectionSort(arr);
-        int[] Sortedarr = new int[5];
-        Sortedarr[0] = 2;
-        Sortedarr[1] = 7;
-        Sortedarr[2] = 8;
-        Sortedarr[3] = 9;
-        Sortedarr[4] = 10;
-        assertArrayEquals(Sortedarr, arr);
+        int[] arr = {8, 9, 7, 10, 2};
+        int[] sortedArr = {2, 7, 8, 9, 10};
+        selectionSort.basicSelectionSort(arr);
+        assertArrayEquals("Positive numbers should be sorted", sortedArr, arr);
     }
+       
 
     public void testNegative() {
-        int[] arr = {-8, -3, -5, -1, -7};
         SelectionSort selectionSort = new SelectionSort();
-        arr = selectionSort.basicSelectionSort(arr);
-        int[] Sortedarr = {-8, -7, -5, -3, -1};
-        assertArrayEquals(Sortedarr, arr);
+        int[] arr = {-8, -9, -7, -10, -2};
+        int[] sortedArr = {-10, -9, -8, -7, -2};
+        selectionSort.basicSelectionSort(arr);
+        assertArrayEquals("Negative numbers should be sorted", sortedArr, arr);
     }
 
     public void testMixed() {
